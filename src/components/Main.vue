@@ -30,5 +30,7 @@ export default {
 
 <style scoped lang="scss">
 main {
+  background-color: rgb(33, 47, 88);
+  height: 100vh;
 }
 </style>
