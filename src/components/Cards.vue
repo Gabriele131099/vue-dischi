@@ -1,6 +1,6 @@
 
 <template>
-  <div class="product-card col-2 px-15">
+  <div class="product-card col-3  px-15">
     <div
       class="img-container"
     >
@@ -15,7 +15,12 @@
 <style>
     .product-card
     {
-        background-color: rgb(32, 32, 49);
+        background-color: rgb(25, 25, 59);
+        color: white;
+    }
+    .img-container img{
+        padding: 20px;
+        width: 100%;
     }
 </style>
 

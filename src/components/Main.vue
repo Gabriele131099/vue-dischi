@@ -30,6 +30,5 @@ export default {
 
 <style scoped lang="scss">
 main {
-  background-color: black;
 }
 </style>
