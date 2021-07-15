@@ -8,18 +8,20 @@
 
 <script>
 import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
-import axios from 'axios'
+import axios from 'axios';
+import Cards from './components/Cards.vue';
+import Main from './components/Main.vue';
+
 export default {
   name: 'App',
   components: {
     Header,
-    Main
+    Main,
+    Cards
   },
-  data(){
-    return
-     {
-       albums:[]
+  data:function(){
+    return {
+    albums: []
      }
     
   },
