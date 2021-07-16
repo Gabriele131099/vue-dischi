@@ -24,6 +24,8 @@ export default {
   },
   props: {
     albums: Array,
+    tmpGenre : Array,
+
   },
 };
 </script>

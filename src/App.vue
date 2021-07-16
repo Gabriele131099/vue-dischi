@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-        <Header/>
-        <Main :albums="albums"/>
+        <Header @select="searchGenre" :tmpGenre="tmpGenre"/>
+        <Main :albums="getFilterAlbumGenre"
+        :inputSelectGenre="inputSelectGenre"/>
+        <Cards v-if="albums.length === 0"/>
 
   </div>
 </template>
@@ -21,17 +23,50 @@ export default {
   },
   data:function(){
     return {
-    albums: []
+      albums: [],
+      inputSelectGenre: "",
+      tmpGenre:[],
+
      }
-    
+
+     
   },
   created() { //facciamo la nostra chiamata Api
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((result) => {
       this.albums = result.data.response //(element).data.(array che ci serve)
-    })
+      this.searchGenre('')
+      this.filterSelect('')
+       
+    });
   },
+  computed:{
+    getFilterAlbumGenre(){
+      return this.albums.filter((album)=> {
+        if (this.inputSelectGenre === 'All') {
+          return true
+        }
+        return album.genre.includes(this.inputSelectGenre)
+      })
+    }
+  },
+    methods:{
+      filterSelect: function(){
+        let arrayGenre=[]
+        for (let i = 0; i < this.albums.length; i++) {
+          let album = this.albums[i]
+          if (!arrayGenre.includes(album.genre)) {
+            arrayGenre.push(album.genre)
+          } 
+          
+        this.tmpGenre = arrayGenre
+        }
+      },
+      searchGenre: function(selectGenre){
+        this.inputSelectGenre = selectGenre 
+      }
+    }
 
-}
+  }
 
 
 

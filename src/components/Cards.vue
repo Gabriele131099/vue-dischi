@@ -40,7 +40,7 @@ export default {
     author: String,
     title: String,
     genre: String,
-  },
+  }
 };
 </script>
 
