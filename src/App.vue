@@ -58,8 +58,8 @@ export default {
             arrayGenre.push(album.genre)
           } 
           
-        this.tmpGenre = arrayGenre
         }
+        this.tmpGenre= arrayGenre
       },
       searchGenre: function(selectGenre){
         this.inputSelectGenre = selectGenre 
