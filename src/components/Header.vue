@@ -9,7 +9,7 @@
                 <option value="All">All</option>
                 <option v-for="(genre , index) in tmpGenre"
                 :key="index"
-                :value="{genre}">
+                :value="genre">
                 {{genre}}
                 </option>all
 
